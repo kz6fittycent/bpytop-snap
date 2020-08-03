@@ -23,11 +23,11 @@ description: |
     sudo snap connect bpytop:hardware-observe
     sudo snap connect bpytop:system-observe
     sudo snap connect bpytop:process-control
-    
+    sudo snap connect bpytop:physical-memory-observe
 
 license: Apache-2.0
 
-base: core18
+base: core20
 grade: stable
 confinement: strict
 
@@ -43,6 +43,7 @@ apps:
       - system-observe
       - hardware-observe
       - network
+      - physical-memory-observe
       
 parts:
   bpytop:
@@ -54,9 +55,11 @@ parts:
       - python3
       - python3-psutil
       - python3-pip
+      - python-distutils-extra
       
     stage-packages:
       - python3-psutil
       - python3
       - python3-distutils
+      - python-distutils-extra
       - python3-pip
