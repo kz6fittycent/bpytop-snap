@@ -32,7 +32,7 @@ grade: stable
 confinement: strict
 
 apps:
-  bashtop:
+  bpytop:
     command: bpytop
     environment:
       LC_ALL: C.UTF-8
@@ -45,7 +45,7 @@ apps:
       - network
       
 parts:
-  bashtop:
+  bpytop:
     source: https://github.com/aristocratos/bpytop
     source-type: git
     plugin: make
