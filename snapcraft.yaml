@@ -47,6 +47,9 @@ apps:
       - hardware-observe
       - network
       - physical-memory-observe
+      - fuse-support
+      - block-devices
+      - removable-media
       
 parts:
   bpytop:
