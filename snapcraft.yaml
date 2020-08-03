@@ -53,8 +53,10 @@ parts:
     build-packages:
       - python3
       - python3-psutil
+      - python3-pip
       
     stage-packages:
       - python3-psutil
       - python3
       - python3-distutils
+      - python3-pip
