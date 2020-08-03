@@ -23,14 +23,11 @@
     - Multiple data collection methods which can be switched if running on Linux
   
 # Once installed, run the following commands to improve functionality:
-        
+```        
     sudo snap connect bpytop:mount-observe
     sudo snap connect bpytop:network-control
     sudo snap connect bpytop:hardware-observe
     sudo snap connect bpytop:system-observe
     sudo snap connect bpytop:process-control
     sudo snap connect bpytop:physical-memory-observe
-    sudo snap connect bpytop:block-devices
-    sudo snap connect bpytop:removable-media
-    sudo snap connect bpytop:fuse-support
-          
+```    
