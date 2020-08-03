@@ -1,6 +1,6 @@
 name: bpytop
 version: 'latest'
-summary: Resource monitor for your terminal. 
+summary: A Python-based resource monitor for your terminal. 
 description: |
   Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
   Python port of bashtop
