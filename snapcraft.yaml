@@ -57,3 +57,4 @@ parts:
     stage-packages:
       - python3-psutil
       - python3
+      - python3-distutils
