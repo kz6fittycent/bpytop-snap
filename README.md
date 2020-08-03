@@ -1,10 +1,14 @@
 # bpytop-snap
-A snap for bpytop
+## A snap for bpytop
 
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/bpytop)
 
+# Install the snap
 
-  Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
-  Python port of bashtop
+`sudo snap install bpytop`
+
+# Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
+## Python port of bashtop
   
     - Easy to use, with a game inspired menu system.
     - Fast and "mostly" responsive UI with UP, DOWN keys process selection.
@@ -18,7 +22,7 @@ A snap for bpytop
     - Shows current read and write speeds for disks
     - Multiple data collection methods which can be switched if running on Linux
   
-  Once installed, run the following commands to improve functionality:
+# Once installed, run the following commands to improve functionality:
         
     sudo snap connect bpytop:mount-observe
     sudo snap connect bpytop:network-control
