@@ -27,7 +27,7 @@ description: |
 
 license: Apache-2.0
 
-base: core20
+base: core18
 grade: stable
 confinement: strict
 
