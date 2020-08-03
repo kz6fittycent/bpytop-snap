@@ -1,7 +1,7 @@
 # bpytop-snap
 ## A snap for bpytop
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/bpytop)
+[![bpytop](https://snapcraft.io//bpytop/badge.svg)](https://snapcraft.io/bpytop)
 
 # Install the snap
 
