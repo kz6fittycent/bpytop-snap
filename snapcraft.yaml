@@ -1,5 +1,6 @@
 name: bpytop
-version: 'latest'
+#version: 'latest'
+adopt-info: bpytop
 summary: A Python-based resource monitor for your terminal. 
 description: |
   Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
@@ -50,7 +51,10 @@ parts:
     source: https://github.com/aristocratos/bpytop
     source-type: git
     plugin: make
-    
+    override-pull: |
+      snapcraftctl pull 
+      snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
+      
     build-packages:
       - python3
       - python3-psutil
