@@ -22,7 +22,7 @@
     - Shows current read and write speeds for disks
     - Multiple data collection methods which can be switched if running on Linux
   
-# Once installed, run the following commands to improve functionality:
+# Once installed, run the following commands to so the snap will function as intended:
 ```        
     sudo snap connect bpytop:mount-observe
     sudo snap connect bpytop:network-control
