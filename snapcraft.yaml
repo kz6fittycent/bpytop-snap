@@ -52,6 +52,7 @@ apps:
 parts:
   bpytop:
     source: https://github.com/aristocratos/bpytop
+    source-type: git
     plugin: python
     python-version: python3
     override-pull: |
