@@ -31,3 +31,6 @@
     sudo snap connect bpytop:process-control
     sudo snap connect bpytop:physical-memory-observe
 ```    
+## You can make changes to the configs and even add themes here:
+
+`~/snap/bashtop/current/.config/bpytop`
