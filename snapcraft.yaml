@@ -54,7 +54,7 @@ parts:
     source: https://github.com/aristocratos/bpytop
     source-type: git
     plugin: python
-    python-version: python3
+#    python-version: python3 # Attempting to build with core20
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
