@@ -7,6 +7,10 @@
 
 `sudo snap install bpytop`
 
+or for the latest:
+
+`sudo snap install --edge bpytop`
+
 # Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
 ## Python port of bashtop
   
