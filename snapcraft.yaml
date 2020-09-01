@@ -30,13 +30,13 @@ description: |
     
 license: Apache-2.0
 
-base: core20
+base: core18
 grade: stable
 confinement: strict
 
 apps:
   bpytop:
-    command: python3 $SNAP/usr/bin/bpytop
+    command: bpytop
     environment:
       LC_ALL: C.UTF-8
     plugs:
@@ -54,7 +54,7 @@ parts:
     source: https://github.com/aristocratos/bpytop
     source-type: git
     plugin: python
-#    python-version: python3
+    python-version: python3
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
