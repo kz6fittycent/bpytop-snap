@@ -36,7 +36,7 @@ confinement: strict
 
 apps:
   bpytop:
-    command: /usr/bin/bpytop
+    command: python3 $SNAP/usr/bin/bpytop
     environment:
       LC_ALL: C.UTF-8
     plugs:
