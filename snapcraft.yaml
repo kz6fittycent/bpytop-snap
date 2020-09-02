@@ -60,12 +60,14 @@ parts:
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
     override-build: |
       make install PREFIX=/usr DESTDIR=$SNAPCRAFT_PART_INSTALL
+      pip3 install psutil
       
     build-packages:
       - python3
       - python3-psutil
       - python3-pip
       - python-distutils-extra
+      - gcc
       
-    stage-packages:
-      - python3-psutil
+#    stage-packages:
+#      - python3-psutil
