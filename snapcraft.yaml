@@ -53,13 +53,14 @@ parts:
   bpytop:
     source: https://github.com/aristocratos/bpytop
     source-type: git
-    plugin: python
+     plugin: make
+#    plugin: python
 #    python-version: python3
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
-    override-build: |
-      make install PREFIX=/usr DESTDIR=$SNAPCRAFT_PART_INSTALL
+#    override-build: |
+#      make install PREFIX=/usr DESTDIR=$SNAPCRAFT_PART_INSTALL
             
     build-packages:
       - python3
@@ -69,3 +70,7 @@ parts:
       
     stage-packages:
       - python3-psutil
+      - python3
+      - python3-distutils
+      - python-distutils-extra
+      - python3-pip
