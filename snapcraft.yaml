@@ -61,7 +61,7 @@ parts:
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
 #    override-build: |
 #      make install PREFIX=/usr DESTDIR=$SNAPCRAFT_PART_INSTALL
-      add-apt-repository: ppa:deadsnakes/ppa   
+      add-apt-repository -y ppa:deadsnakes/ppa   
       apt-update -y
       apt-get install -y python3-dev
       pip3 install psutil
