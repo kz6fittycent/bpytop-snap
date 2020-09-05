@@ -30,7 +30,7 @@ description: |
     
 license: Apache-2.0
 
-base: core18
+base: core20
 grade: stable
 confinement: strict
 
@@ -47,7 +47,6 @@ apps:
       - hardware-observe
       - network
       - physical-memory-observe
-      - home
       
   psutil:
     source: https://github.com/giampaolo/psutil.git
