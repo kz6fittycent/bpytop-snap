@@ -49,27 +49,27 @@ apps:
       - physical-memory-observe
       - home
       
-parts:
+  psutil:
+    source: https://github.com/giampaolo/psutil.git
+    plugin: nil
+    override-pull: |
+      snapcraftctl pull
+      git checkout `git describe --tags --abbrev=0`
+    override-build: |
+      python3 setup.py install --install-layout=deb --root=$SNAPCRAFT_PART_INSTALL --prefix=/usr
+      find $SNAPCRAFT_PART_INSTALL -type d -name __pycache__ -print0 | xargs -0 rm -rf
+      find $SNAPCRAFT_PART_INSTALL -type f -name *.so -print0 | xargs -0 strip -s
+    build-packages: [python3-all-dev, python3-setuptools]
+
   bpytop:
-    source: https://github.com/aristocratos/bpytop
-    source-type: git
-     plugin: make
-    plugin: python
-    python-version: python3
+    source: https://github.com/aristocratos/bpytop.git
+    plugin: nil
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
-#    override-build: |
-#      make install PREFIX=/usr DESTDIR=$SNAPCRAFT_PART_INSTALL
-      add-apt-repository -y ppa:deadsnakes/ppa   
-      apt-update -y
-      apt-get install -y python3-dev
-      pip3 install psutil
-      
-    build-packages:
-      - python3-dev
-      - python3-pip
-      - python-distutils-extra
-      
-    stage-packages:
-      - python3-psutil
+    override-build: make install PREFIX=/usr DESTDIR=$SNAPCRAFT_PART_INSTALL
+    stage-packages: [python3-all]
+    prime:
+      - -bin
+      - -usr/share/doc
+      - -usr/share/man
