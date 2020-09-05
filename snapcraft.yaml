@@ -47,7 +47,7 @@ apps:
       - hardware-observe
       - network
       - physical-memory-observe
-      
+parts:     
   psutil:
     source: https://github.com/giampaolo/psutil.git
     plugin: nil
