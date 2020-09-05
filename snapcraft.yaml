@@ -28,7 +28,7 @@ description: |
   You can make changes to the configs and even add themes here:
     ~/snap/bashtop/current/.config/bpytop
     
-license: Apache-2.0
+#license: Apache-2.0
 
 #base: core18
 grade: stable
