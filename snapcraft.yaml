@@ -34,6 +34,14 @@ base: core20
 grade: stable
 confinement: strict
 
+architectures:
+  - build-on: 
+    - amd64
+    - arm64
+    - armhf
+    - ppc64el
+    - s390x
+
 apps:
   bpytop:
     command: usr/bin/bpytop
