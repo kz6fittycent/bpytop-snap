@@ -28,26 +28,22 @@ description: |
   You can make changes to the configs and even add themes here:
     ~/snap/bashtop/current/.config/bpytop
     
-#license: Apache-2.0
+license: Apache-2.0
 
-#base: core18
+base: core20
 grade: stable
 confinement: strict
 
 apps:
   bpytop:
-    command: bpytop
+    command: usr/bin/bpytop
     environment:
       LC_ALL: C.UTF-8
-    plugs:
-      - mount-observe
-      - network-control
-      - process-control
-      - system-observe
-      - hardware-observe
-      - network
-      - physical-memory-observe
-parts:     
+      LANG: C.UTF-8
+      PYTHONPATH: $SNAP/usr/lib/python3/dist-packages
+    plugs: [mount-observe, network-control, process-control, system-observe, hardware-observe, network, physical-memory-observe]
+
+parts:
   psutil:
     source: https://github.com/giampaolo/psutil.git
     plugin: nil
@@ -67,8 +63,3 @@ parts:
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
     override-build: make install PREFIX=/usr DESTDIR=$SNAPCRAFT_PART_INSTALL
-    stage-packages: [python3-all]
-    prime:
-      - -bin
-      - -usr/share/doc
-      - -usr/share/man
