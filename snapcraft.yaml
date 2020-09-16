@@ -48,25 +48,39 @@ apps:
       LC_ALL: C.UTF-8
       LANG: C.UTF-8
       PYTHONPATH: $SNAP/usr/lib/python3/dist-packages
-    plugs: [mount-observe, network-control, process-control, system-observe, hardware-observe, network, physical-memory-observe]
+    plugs: 
+      - mount-observe
+      - network-control
+      - process-control
+      - system-observe
+      - hardware-observe
+      - network
+      - physical-memory-observe
 
 parts:
   psutil:
     source: https://github.com/giampaolo/psutil.git
     plugin: nil
+    
     override-pull: |
       snapcraftctl pull
       git checkout `git describe --tags --abbrev=0`
+    
     override-build: |
       python3 setup.py install --install-layout=deb --root=$SNAPCRAFT_PART_INSTALL --prefix=/usr
       find $SNAPCRAFT_PART_INSTALL -type d -name __pycache__ -print0 | xargs -0 rm -rf
       find $SNAPCRAFT_PART_INSTALL -type f -name *.so -print0 | xargs -0 strip -s
-    build-packages: [python3-all-dev, python3-setuptools]
+    
+    build-packages: 
+      - python3-all-dev
+      - python3-setuptools
 
   bpytop:
     source: https://github.com/aristocratos/bpytop.git
     plugin: nil
+    
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
+    
     override-build: make install PREFIX=/usr DESTDIR=$SNAPCRAFT_PART_INSTALL
