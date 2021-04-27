@@ -19,7 +19,6 @@ description: |
   
   Once installed, run the following commands so the snap will function as intended:
     sudo snap connect bpytop:mount-observe
-    sudo snap connect bpytop:network-control
     sudo snap connect bpytop:hardware-observe
     sudo snap connect bpytop:system-observe
     sudo snap connect bpytop:process-control
@@ -56,7 +55,6 @@ apps:
       PYTHONPATH: $SNAP/usr/lib/python3/dist-packages
     plugs: 
       - mount-observe
-      - network-control
       - process-control
       - system-observe
       - hardware-observe
