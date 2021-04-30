@@ -26,15 +26,6 @@ or for the latest:
     - Shows current read and write speeds for disks
     - Multiple data collection methods which can be switched if running on Linux
   
-# Once installed, run the following commands to so the snap will function as intended:
-```        
-    sudo snap connect bpytop:mount-observe
-    sudo snap connect bpytop:network-control
-    sudo snap connect bpytop:hardware-observe
-    sudo snap connect bpytop:system-observe
-    sudo snap connect bpytop:process-control
-    sudo snap connect bpytop:physical-memory-observe
-```    
 ## You can make changes to the configs and even add themes here:
 
 `~/snap/bashtop/current/.config/bpytop`
