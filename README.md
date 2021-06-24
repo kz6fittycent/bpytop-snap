@@ -4,6 +4,7 @@
 [![bpytop](https://snapcraft.io//bpytop/badge.svg)](https://snapcraft.io/bpytop)
 
 # Install the snap
+### NOTE: `i386` is no longer supported in `core20`!
 
 `sudo snap install bpytop`
 
