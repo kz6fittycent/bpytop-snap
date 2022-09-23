@@ -30,10 +30,6 @@ grade: stable
 confinement: strict
 compression: lzo
 
-architectures:
-  - build-on: amd64    
-    run-on: [ amd64, arm64, armhf, ppc64el, s390x ]
-
 apps:
   bpytop:
     command: usr/bin/bpytop
