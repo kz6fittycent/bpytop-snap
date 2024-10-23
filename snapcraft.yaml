@@ -51,7 +51,7 @@ parts:
     plugin: nil
     
     override-pull: |
-      craftctl pull
+      craftctl default
       git checkout `git describe --tags --abbrev=0`
     
     override-build: |
