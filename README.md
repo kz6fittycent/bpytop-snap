@@ -1,7 +1,7 @@
 # bpytop-snap
 ## A snap for bpytop
 
-[![bpytop](https://snapcraft.io//bpytop/badge.svg)](https://snapcraft.io/bpytop)
+[![bpytop](https://snapcraft.io//bpytop/badge.svg)](https://snapcraft.io/bpytop) [![🧪 Snap Builds](https://github.com/kz6fittycent/bpytop-snap/actions/workflows/test-snap-can-build.yml/badge.svg?branch=master)](https://github.com/kz6fittycent/bpytop-snap/actions/workflows/test-snap-can-build.yml)
 
 # Install the snap
 ### NOTE: `i386` is no longer supported in `core20`!
