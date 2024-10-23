@@ -21,11 +21,10 @@ description: |
     ~/snap/bashtop/current/.config/bpytop
     
 license: Apache-2.0
-
-assumes:
-  - command-chain
-  
-base: core20
+source-code: https://github.com/aristocratos/bpytop
+issues: https://github.com/kz6fittycent/bpytop-snap
+contact: https://github.com/kz6fittycent/bpytop-snap
+base: core24
 grade: stable
 confinement: strict
 compression: lzo
@@ -33,8 +32,6 @@ compression: lzo
 apps:
   bpytop:
     command: usr/bin/bpytop
-    command-chain: 
-      - bin/homeishome-launch       
     environment:
       LC_ALL: C.UTF-8
       LANG: C.UTF-8
@@ -54,13 +51,13 @@ parts:
     plugin: nil
     
     override-pull: |
-      snapcraftctl pull
+      craftctl pull
       git checkout `git describe --tags --abbrev=0`
     
     override-build: |
-      python3 setup.py install --install-layout=deb --root=$SNAPCRAFT_PART_INSTALL --prefix=/usr
-      find $SNAPCRAFT_PART_INSTALL -type d -name __pycache__ -print0 | xargs -0 rm -rf
-      find $SNAPCRAFT_PART_INSTALL -type f -name *.so -print0 | xargs -0 strip -s
+      python3 setup.py install --install-layout=deb --root=$CRAFT_PART_INSTALL --prefix=/usr
+      find $CRAFT_PART_INSTALL -type d -name __pycache__ -print0 | xargs -0 rm -rf
+      find $CRAFT_PART_INSTALL -type f -name *.so -print0 | xargs -0 strip -s
     
     build-packages: 
       - python3-all-dev
@@ -69,14 +66,9 @@ parts:
   bpytop:
     source: https://github.com/aristocratos/bpytop.git
     plugin: nil
-    
+
     override-pull: |
-      snapcraftctl pull
-      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
+      craftctl default
+      craftctl set version="$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)" 
     
-    override-build: make install PREFIX=/usr DESTDIR=$SNAPCRAFT_PART_INSTALL
-    
-  homeishome-launch:
-    plugin: nil
-    stage-snaps:
-      - homeishome-launch       
+    override-build: make install PREFIX=/usr DESTDIR=$CRAFT_PART_INSTALL      
